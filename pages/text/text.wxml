@@ -1,0 +1,25 @@
+<!--pages/text/text.wxml-->
+<!-- 1.text 的基本使用 -->
+<text>小程序\n</text>
+<text>不是\n</text>
+
+<!-- 2.selectable:true -->
+<!-- 默认情况下text中的文本长按是不能被选中的 -->
+<text selectable='{{true}}' >xiaochaichaiya\n</text>
+<!-- 不写即为false,写了 selectable == selectable='{{true}}' -->
+<!-- 推荐下面这种写法 ，更为简洁-->
+<text selectable>xiaochaichaiya\n</text>
+
+<!-- 3.space 决定文本空格的大小 -->
+<!-- nbsp 正常的空格 -->
+<!-- ensp 半个中文字节的大小 -->
+<!-- emsp 1个中文字节的大小 -->
+<text space="nbsp">xiao bai\n</text>
+<text space="ensp">xiao bai\n</text>
+<text space="emsp">xiao bai\n</text>
+
+<!-- 4.decode属性：是否解码文本 -->
+<!-- 未解 -->
+<text>5 &gt; 3\n</text>
+<!-- 解码 -->
+<text decode>5 &gt; 3\n</text>
