@@ -1,12 +1,25 @@
 <!--pages/home/home.wxml-->
 <!-- 1.小程序的数据绑定：{{}} -> Mustache -->
 <view class="title">Hello {{name}}</view>
-<view>myold:{{age}}</view>
+<!-- <view>myold:{{age}}</view> -->
 
 <!-- 2.列表页展示：wx:for 遍历 -->
-<view wx:for="{{students}}" wx:key>{{item.name}}-{{item.age}}</view>
+<!-- <view wx:for="{{students}}" wx:key>{{item.name}}-{{item.age}}</view> -->
 
 <!-- 3.事件监听改变data -->
-<view>当前计数：{{counter}}</view>
+<!-- <view>当前计数：{{counter}}</view>
 <button size="mini" bindtap = "handleBtnClick">+</button>
-<button size="mini" bindtap = "handleSubtraction">-</button>
+<button size="mini" bindtap = "handleSubtraction">-</button> -->
+
+<!-- 获取用户信息 -->
+<button size="mini" 
+        open-type="getUserInfo"
+        bindgetuserinfo="handleGetUserInfo">
+  获取授权
+</button>
+<open-data type="userNickName"></open-data>
+<view class="tuoXiang">
+  <open-data type="userAvatarUrl"></open-data>
+</view>
+
+<view wx:for="{{lists}}">{{item.title}}</view>

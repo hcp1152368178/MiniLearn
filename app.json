@@ -5,7 +5,7 @@
     "pages/cart/cart",
     "pages/profile/profile"
   ],
-  "sitemapLocation": "sitemap54.json",
+  "sitemapLocation": "sitemap.json",
   "window": {
     "navigationBarBackgroundColor": "#58bc58",
     "navigationBarTextStyle": "white",
