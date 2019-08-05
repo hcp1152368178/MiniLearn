@@ -1,0 +1,31 @@
+<!--pages/view/view.wxml-->
+<!-- <text>pages/view/view.wxml</text> -->
+
+<!-- hover-class	           string	  none	否	指定按下去的样式类。当 hover-class="none" 时，没有点击态效果 -->
+<!-- hover-stop-propagation	 boolean	false	否	指定是否阻止本节点的祖先节点出现点击态 -->
+<!-- hover-start-time	       number	  50	  否	按住后多久出现点击态，单位毫秒	 -->
+<!-- hover-stay-time	       number	  400	  否	手指松开后点击态保留时间，单位毫秒	 -->
+
+
+<!-- 1.view 的基本使用 -->
+<view class="box">哈哈哈</view>
+<view>呵呵呵</view>
+
+<!-- 2.hover-class: 当用户按下组件时，显示的样式 -->
+<view hover-class="hover-view" 
+      hover-start-time="{{0}}"
+      class="box1">
+  box1
+</view>
+
+<!-- 3.hover-stop-propagation="{{true}}"阻止本节点的祖先节点出现点击态 -->
+<view class="box2" hover-class="hover-box2">
+  <view hover-class="hover-view" 
+      hover-stay-time="{{0}}"
+      hover-stop-propagation="{{true}}"
+      class="box1">
+    box1
+  </view>
+</view>
+
+

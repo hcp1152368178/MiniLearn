@@ -1,0 +1,27 @@
+/* pages/scroll/scroll.wxss */
+.container1{
+  background: red;
+  /* 不换行 */
+  white-space: nowrap;
+  
+}
+.item1{
+  background: yellow;
+  width:100px;
+  height:100px;
+  margin: 10px;
+  /* 一行显示 */
+  display:inline-block
+}
+
+.container2{
+  background: hotpink;
+  height: 230px;
+  margin-top: 20px
+}
+
+.item2{
+  background: springgreen;
+  height: 100px;
+  margin: 10px
+}

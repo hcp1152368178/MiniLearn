@@ -1,0 +1,26 @@
+/* pages/view/view.wxss */
+.box{
+  background: hotpink
+}
+.box1{
+  background: red;
+  width: 100px;
+  height: 100px
+}
+
+.hover-view{
+  background: yellow;
+  font-size: 30px;
+   width: 100px;
+  height: 100px
+}
+
+.box2{
+  width: 200px;
+  height: 200px;
+  background: blue;
+  margin-top:20px 
+}
+.hover-box2{
+  background: #58bc58
+}
