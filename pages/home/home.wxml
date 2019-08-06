@@ -22,4 +22,4 @@
   <open-data type="userAvatarUrl"></open-data>
 </view>
 
-<view wx:for="{{lists}}">{{item.title}}</view>
+<view wx:for="{{lists}}" wx:key="item">{{item.title}}</view>

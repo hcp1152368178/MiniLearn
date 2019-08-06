@@ -1,0 +1,108 @@
+<!--pages/wxml/wxml.wxml-->
+<!-- <text>pages/wxml/wxml.wxml</text> -->
+
+<!-- Mustache -->
+<view>{{message}}</view>
+<view>{{firstname}} {{lastname}}</view>
+<view>{{firstname + ' ' +lastname}}</view>
+<view>{{age >= 18 ? '成年人' : '未成年'}}</view>
+
+<view>{{nowTime}}</view>
+<view>{{nowTime1}}</view>
+<view>{{nowTime2}}</view>
+
+<button size="mini" bindtap="handleSwitchColor">切换颜色</button>
+<view class="box {{isActive ? 'active' : ''}}">嘿嘿嘿</view>
+
+<!-- <map class="map" longitude="116.11" latitude="39.6"></map> -->
+
+<view>----------------条件判断-----------</view>
+<!-- wx:if的使用 -->
+<button size="mini" bindtap="handleSwitchShow">切换显示</button>
+<view wx:if="{{isShow}}">哈哈哈</view>
+ 
+ <!-- wx:elif 和 wx:else -->
+ <button size="mini" bindtap="handleIncrement">每次增加6分</button>
+ <view wx:if="{{score >= 90}}">优秀</view>
+ <view wx:elif="{{score >= 80}}">良好</view>
+ <view wx:elif="{{score >= 60}}">及格</view>
+ <view wx:else>不及格</view>
+
+<view>----------隐藏hidden 和 wx:if ------------</view>  
+<!-- hidden 属性-->
+<view hidden="{{true}}">我是hidden属性控制的内容</view>
+
+<!-- 
+  区别：
+    wx:if: 隐藏时，连组件都删除
+    hidden：隐藏时，只是改变组件的属性{display:none}
+  选择：
+    如果切换频率非常高，选hidden，
+    反之，选wx:if
+ -->
+<view hidden="{{true}}">我是hidden控制的内容</view>
+<view wx:if="{{false}}">我是wx:if控制的内容</view>
+
+
+<view>-------------列表渲染-------------------</view>
+<!-- 1. wx:for的回顾 -->
+<!-- 1.1 遍历数组、字符串、数字 -->
+<!-- <view wx:for="{{['abc','cba','nba']}}" wx:key>{{item}} {{index}}</view>
+<view wx:for="huangchuanpu" wx:key>{{item}} {{index}}</view>
+<view wx:for="{{9}}" wx:key>{{item}} {{index}}</view> -->
+
+
+<view>-----block 包装元素-----</view>
+<!-- <view wx:if="{{isShow}}">
+  <button>按钮</button>
+  <view>呵呵呵</view>
+  <text>我是内容</text>
+</view>
+
+<view wx:if="{{3}}">
+  <button>按钮</button>
+  <view>呵呵呵</view>
+  <text>我是内容</text>
+</view> -->
+
+<!-- 2. block 标签 并不是一个组件，它仅仅是一个包装元素，不会再页面中有任何的渲染，只接受控制属性 -->
+<!-- <block wx:if="{{isShow}}">
+  <button>按钮</button>
+  <view>呵呵呵</view>
+  <text>我是内容</text>
+</block>
+<block wx:if="{{3}}">
+  <button>按钮</button>
+  <view>呵呵呵</view>
+  <text>我是内容</text>
+</block> -->
+
+<!-- 3.item/index 起名字 -->
+<!-- <view wx:for="{{movies}}" wx:for-item="movie" wx:for-index="i" wx:key="index">{{movie}}</view>  -->
+
+<!-- <block wx:for="{{nums}}" wx:key="item" wx:for-item="inner_nums"> -->
+  <!-- <view>{{item}}</view> -->
+  <!-- <block wx:for="{{inner_nums}}" wx:key="item">
+    <view>{{item}}</view>
+  </block>
+</block> -->
+
+<!-- 4.key 的作用 -->
+<!-- 如果用index 仅仅是消除警告 -->
+<!-- <view class="container">
+  <view wx:for="{{letters}}" wx:key="{{item}}">{{item}}</view>
+</view> -->
+
+<!-- 5. 模板template -->
+<view>-------template--------</view>
+<!-- <template name="contentItem">
+  <button size="mini">{{btnText}}</button>
+  <view>{{content}}</view>
+</template> -->
+<import src="/wxml/template.wxml"/>
+<!-- <import src="../../wxml/template.wxml"/> -->
+
+<template is="contentItem" data="{{btnText:'按钮',content:'哈哈哈'}}"/>
+<template is="contentItem" data="{{btnText:'警告',content:'呵呵呵'}}"/>
+<template is="contentItem" data="{{btnText:'举报',content:'嘿嘿嘿'}}"/>
+<template is="contentItem" data="{{btnText:'强华',content:'强的一匹'}}"/>

@@ -1,0 +1,34 @@
+/* pages/wxss/wxss.wxss */
+.box{
+  color: springgreen;
+  font-size: 20px
+}
+
+.content{
+  background: green
+}
+
+@import './style/box.wxss';
+@import './style/content.wxss';
+
+/* .box1{
+  width: 100px;
+  height: 100px;
+  background: yellow;
+  margin-top: 20px
+}
+.box2{
+  width: 200rpx;
+  height: 200rpx;
+  background: yellow;
+  margin-top: 20px
+} */
+
+/* .content1{
+  font-size:12px
+}
+.content2{
+  font-size:24rpx
+} */
+
+@import './style/weui-searchbar.wxss'
