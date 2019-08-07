@@ -1,7 +1,7 @@
 // getApp()获取APP()产生的实例对象
-// const app = getApp();
+const app = getApp();
 
-// const name = app.globalDate.name;
+const token = app.globalDate.token;
 // const age = app.globalDate.age;
 
 // 注册页面
@@ -27,34 +27,34 @@ Page({
   // 1.监听页面的生面周期
   // 页面被加载出来
   onLoad(){
-    console.log('onLoad')
-    wx.request({
-      // 网络请求
-      url: 'http://123.207.32.32:8000/recommend',
-      success:(res)=>{
-        console.log(res)
-        const data = res.data.data.list;
-        this.setData({
-          lists: data
-        })
-      }
-    })
+    // console.log('onLoad')
+    // wx.request({
+    //   // 网络请求
+    //   url: 'http://123.207.32.32:8000/recommend',
+    //   success:(res)=>{
+    //     console.log(res)
+    //     const data = res.data.data.list;
+    //     this.setData({
+    //       lists: data
+    //     })
+    //   }
+    // })
   },
   // 页面显示出来
   onShow() {
-    console.log('onShow')
+    // console.log('onShow')
   },
   // 页面初次渲染完成时回调
   onReady() {
-    console.log('onReady')
+    // console.log('onReady')
   },
   // 当页面隐藏时
   onHide() {
-    console.log('onHide')
+    // console.log('onHide')
   },
   // 监听页面卸载
   onUnload() {
-    console.log('onUnload')
+    // console.log('onUnload')
   },
 
 // 3.监听wxml相关的一些事件
