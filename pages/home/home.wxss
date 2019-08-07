@@ -8,3 +8,15 @@
   height: 100px;
   /* border-radius: 50%; */
 }
+.red{
+  color:red;
+}
+.yellow{
+  color: yellow
+}
+.blue{
+  color: blue
+}
+.green{
+  color: green
+}

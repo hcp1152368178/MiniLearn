@@ -1,0 +1,14 @@
+<!--components/h-tab-control/h-tab-control.wxml-->
+<view class="tab-control">
+  <!-- 不能写死 -->
+  <!-- <view class="tab-item">流行</view>
+  <view class="tab-item">新款</view>
+  <view class="tab-item">精选</view> -->
+
+  <block wx:for="{{titles}}" wx:key="{{index}}">
+   <view class="tab-item  {{currentIndex == index ? 'active' : ''}}"     bind:tap="handleItemClick"
+   data-index="{{index}}">
+   <text>{{item}}</text> 
+  </view>
+  </block>
+</view>

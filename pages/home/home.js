@@ -9,7 +9,7 @@
 Page({
   // 2.初始化数据
   data:{
-    name:'xiaobai',
+    names:'xiaobai',
     age:18,
     students:[
       { id: 1, name:'超强华',age:12},
@@ -20,72 +20,105 @@ Page({
       {id:6,name:'小黑',age:22}
     ],
     lists:[],
-    counter:0
+    counter:0,
+    isShow:true
   },
+  handleIncrement(event){
+    console.log('-----',event);
+    console.log(event.detail, event.detail.name, event.detail.age)
+    this.setData({
+      counter:this.data.counter+1
+    })
+  },
+  handleTabClick(event){
+    console.log(event)
+  },
+  handleIncrementCpn(){
+    console.log('------')
+    // 最终目的：修改my-sel中的counter
+    // 获取组件对象 my_sel
+    const my_sel = this.selectComponent('.sel-class')
+    console.log(my_sel)
+
+    // // 2. 通过setData修改组件中的数据
+    // // 不推荐 (直接不合理)
+    // my_sel.setData({
+    //   counter:my_sel.data.counter + 20
+    // })
+
+    // 推荐写法
+    // 3.通过方法对数据进行修改
+    my_sel.incrementCounter(10)
+  },
+    handleChangeShow(){
+      this.setData({
+        isShow: !this.data.isShow
+      })
+    },
   
 
   // 1.监听页面的生面周期
   // 页面被加载出来
   onLoad(){
-    console.log('onLoad')
-    wx.request({
-      // 网络请求
-      url: 'http://123.207.32.32:8000/recommend',
-      success:(res)=>{
-        console.log(res)
-        const data = res.data.data.list;
-        this.setData({
-          lists: data
-        })
-      }
-    })
+    // console.log('onLoad')
+    // wx.request({
+    //   // 网络请求
+    //   url: 'http://123.207.32.32:8000/recommend',
+    //   success:(res)=>{
+    //     console.log(res)
+    //     const data = res.data.data.list;
+    //     this.setData({
+    //       lists: data
+    //     })
+    //   }
+    // })
   },
   // 页面显示出来
   onShow() {
-    console.log('onShow')
+    // console.log('onShow')
   },
   // 页面初次渲染完成时回调
   onReady() {
-    console.log('onReady')
+    // console.log('onReady')
   },
   // 当页面隐藏时
   onHide() {
-    console.log('onHide')
+    // console.log('onHide')
   },
   // 监听页面卸载
   onUnload() {
-    console.log('onUnload')
+    // console.log('onUnload')
   },
 
 // 3.监听wxml相关的一些事件
   handleBtnClick() {
-    console.log('点了+号')
+    // console.log('点了+号')
     // this.setData()
-    this.setData({
-      counter: this.data.counter + 1
-    })
+    // this.setData({
+    //   counter: this.data.counter + 1
+    // })
   },
   handleSubtraction() { 
-    console.log('点了-号')
-    this.setData({
-      counter: this.data.counter - 1
-    })
+    // console.log('点了-号')
+    // this.setData({
+    //   counter: this.data.counter - 1
+    // })
   },
   handleGetUserInfo(event) {
-    console.log(event)
+    // console.log(event)
   },
 
   // 4.其它事件
   // 监听页面的滚动
   onPageScroll(obj){
-    console.log(obj)
+    // console.log(obj)
   },
   // 监听页面滚动到底部
   onReachBottom(){
-    console.log('页面已经滚动到底部')
+    // console.log('页面已经滚动到底部')
   },
   // 下拉刷新
   onPullDownRefresh(){
-    console.log('下拉刷新中....')
+    // console.log('下拉刷新中....')
   }
 })

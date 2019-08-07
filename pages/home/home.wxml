@@ -1,26 +1,62 @@
-<!--pages/home/home.wxml-->
-<!-- 1.小程序的数据绑定：{{}} -> Mustache -->
-<view class="title">Hello {{name}}</view>
-<!-- <view>myold:{{age}}</view> -->
+<view class="title">Hello {{names}}</view>
 
-<!-- 2.列表页展示：wx:for 遍历 -->
-<!-- <view wx:for="{{students}}" wx:key>{{item.name}}-{{item.age}}</view> -->
+<!-- 1.使用自定义的组件 -->
+<!-- <my-cpn/>
+<my-cpn></my-cpn> -->
 
-<!-- 3.事件监听改变data -->
+<!-- 2. 使用自定义样式style组件 -->
+<!-- <my-style/> -->
+
+<!-- 3. 自定义组件通讯 -->
+<!-- <my-prop title="哈哈哈" titleclass="red"/>
+<my-prop title="呵呵呵" titleclass="yellow"/>
+<my-prop title="黑嘿嘿" titleclass="blue"/>
+<my-prop titleclass="green"/> -->
+
+<!-- 4. 组件内部发出事件 -->
 <!-- <view>当前计数：{{counter}}</view>
-<button size="mini" bindtap = "handleBtnClick">+</button>
-<button size="mini" bindtap = "handleSubtraction">-</button> -->
+<my-event bind:increment="handleIncrement"/> -->
 
-<!-- 获取用户信息 -->
-<!-- <button size="mini" 
-        open-type="getUserInfo"
-        bindgetuserinfo="handleGetUserInfo">
-  获取授权
-</button>
-<open-data type="userNickName"></open-data>
-<view class="tuoXiang">
-  <open-data type="userAvatarUrl"></open-data>
-</view>
+<!-- 5. tab-control练习 -->
+<!-- <h-tab-control/> -->
+<!-- <h-tab-control titles="{{['衣服','裤子','鞋子']}}"/> -->
+<h-tab-control titles="{{['新歌榜','热歌榜','摇滚榜','爵士','流行']}}"
+               bind:itemClick="handleTabClick"/>
 
-<view wx:for="{{lists}}">{{item.title}}</view> -->
+<!-- 6.直接使用组件中的方法或数据 -->
+<button  bind:tap="handleIncrementCpn" size="mini">修改组件内的数据</button>
+<my-sel class='sel-class' id='sel-id'/>
 
+<!-- 7. slot插槽的使用 -->
+<!-- 7.1单个插槽使用 -->
+<my-slot>
+  <button size="mini">我是插入的按钮</button>
+</my-slot>
+
+<my-slot>
+  <button size="mini">什么鬼</button>
+</my-slot>
+
+<my-slot>
+  <image style="width:100%" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1565170926446&di=1522f1c81a0a45e4234f7a1f757177b2&imgtype=0&src=http%3A%2F%2Fa.hiphotos.baidu.com%2Fimage%2Fpic%2Fitem%2F4610b912c8fcc3cebba8b8e09c45d688d53f20fc.jpg"></image>
+</my-slot>
+
+<my-slot>
+  <slider value="20"></slider>
+</my-slot>
+
+<!--  7.2 多个插槽的使用 -->
+<!-- 
+    注意事项：
+      1.给每一个插槽起一个名字：name属性
+      2.必须在Component对象中添加一个选项：options ->multipleSlots:true
+
+ -->
+ <button size="mini" bind:tap="handleChangeShow">切换显示</button>
+<block wx:if="{{isShow}}">
+  <my-mslot>
+    <button size="mini" slot="slot2">插入的按钮</button>
+    <slider slot="slot1"></slider>
+    <text slot="slot3">嘿嘿嘿</text>
+  </my-mslot>
+</block>
