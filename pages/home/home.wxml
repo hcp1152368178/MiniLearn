@@ -1,26 +1,18 @@
 <!--pages/home/home.wxml-->
 <!-- 1.小程序的数据绑定：{{}} -> Mustache -->
 <view class="title">Hello {{name}}</view>
-<!-- <view>myold:{{age}}</view> -->
 
-<!-- 2.列表页展示：wx:for 遍历 -->
-<!-- <view wx:for="{{students}}" wx:key>{{item.name}}-{{item.age}}</view> -->
+<!-- 1. Toast -->
+<button size="mini" bind:tap="handleShowToast">showToast</button>
 
-<!-- 3.事件监听改变data -->
-<!-- <view>当前计数：{{counter}}</view>
-<button size="mini" bindtap = "handleBtnClick">+</button>
-<button size="mini" bindtap = "handleSubtraction">-</button> -->
+<!-- 2. Modal -->
+<button size="mini" bind:tap="handleShowModal">showModal</button>
 
-<!-- 获取用户信息 -->
-<!-- <button size="mini" 
-        open-type="getUserInfo"
-        bindgetuserinfo="handleGetUserInfo">
-  获取授权
-</button>
-<open-data type="userNickName"></open-data>
-<view class="tuoXiang">
-  <open-data type="userAvatarUrl"></open-data>
-</view>
+<!-- 3.Loading -->
+<button size="mini" bind:tap="handleShowLoading">showLoading</button>
 
-<view wx:for="{{lists}}">{{item.title}}</view> -->
+<!-- 4.ActionSheet -->
+<button size="mini" bind:tap="handleShowActionSheet">showActionSheet</button>
 
+<!-- 5.分享按钮 -->
+<button size="mini" open-type="share">分享</button>
