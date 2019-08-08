@@ -20,25 +20,26 @@ Page({
       {id:6,name:'小黑',age:22}
     ],
     lists:[],
-    counter:0
+    counter:0,
+    title:'呵呵呵'
   },
   
 
   // 1.监听页面的生面周期
   // 页面被加载出来
   onLoad(){
-    console.log('onLoad')
-    wx.request({
-      // 网络请求
-      url: 'http://123.207.32.32:8000/recommend',
-      success:(res)=>{
-        console.log(res)
-        const data = res.data.data.list;
-        this.setData({
-          lists: data
-        })
-      }
-    })
+    // console.log('onLoad')
+    // wx.request({
+    //   // 网络请求
+    //   url: 'http://123.207.32.32:8000/recommend',
+    //   success:(res)=>{
+    //     console.log(res)
+    //     const data = res.data.data.list;
+    //     this.setData({
+    //       lists: data
+    //     })
+    //   }
+    // })
   },
   // 页面显示出来
   onShow() {
@@ -87,5 +88,14 @@ Page({
   // 下拉刷新
   onPullDownRefresh(){
     console.log('下拉刷新中....')
+  },
+
+  handlePushDetail(){
+    wx.navigateTo({
+      url: '/pages/detail/detail?title=你好啊',
+      success: function(res) {},
+      fail: function(res) {},
+      complete: function(res) {},
+    })
   }
 })

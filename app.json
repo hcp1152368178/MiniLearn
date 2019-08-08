@@ -3,6 +3,8 @@
     "pages/home/home",
     "pages/category/category",
     "pages/cart/cart",
+    "pages/detail/detail",
+    "pages/comment/comment",
     "pages/profile/profile"
   ],
   "sitemapLocation": "sitemap.json",
